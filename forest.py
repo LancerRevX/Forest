@@ -10,11 +10,12 @@ current = tree
 while 1:
     current.print()
     
-    args = input('$ ').split()
+    args = input('$ ')
     cmd = args[0]
+    args = args[1:].split()
 
     try:
-        path = [int(i) for i in args[1:]]
+        path = [int(i) for i in args]
         node = current
         for i in path:
             node = node.get(i)
@@ -22,13 +23,13 @@ while 1:
         print('Invalid path')
         continue
                 
-    if cmd == 'u':
+    if cmd in ('u', 'г'):
         current = node
     elif cmd == 'b':
         current = current.get(-1)
     elif cmd == 's':
         current = tree
-    elif cmd == 'r':
+    elif cmd in ('r', 'к'):
         node.name = input('New name: ')
     elif cmd == 'd':
         if node == current:
