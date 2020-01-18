@@ -29,7 +29,7 @@ while 1:
     elif cmd == 's':
         current = tree
     elif cmd == 'r':
-        node.name = input()
+        node.name = input('New name: ')
     elif cmd == 'd':
         if node == current:
             current = tree
